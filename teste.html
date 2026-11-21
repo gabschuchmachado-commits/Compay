@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176c4b">
+  <meta name="description" content="Com Pay — um marketplace para lojas independentes e pessoas que compram perto de casa.">
+  <title>Com Pay — lojas perto de você</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="teste.css">
+</head>
+<body>
+  <div class="top-strip"><div class="top-strip-inner"><span>Um lugar para comprar das lojas da sua região</span><span class="demo-label">Marketplace de lojas independentes</span></div></div>
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="#" id="brand-home" aria-label="Com Pay, início">
+        <span class="brand-mark"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M8 18h28l-3 17H11L8 18Z" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><path d="M14 18c.5-5 3.3-8 7-9 .1 4.5-1.6 7.3-5.8 9" fill="#c6e49c"/><path d="M25 18c.5-4.3 3.4-7.3 7-7.7.2 4.2-1.5 7.2-5.7 8.7" fill="#f3a56e"/><path d="M13 24h18M14 29h16" fill="none" stroke="white" stroke-linecap="round" stroke-width="1.7"/></svg></span>
+        <span class="brand-name">com<span>pay</span><small>LOJAS PERTO DE VOCÊ</small></span>
+      </a>
+      <label class="search" for="search-input"><span class="search-icon" aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Busque lojas ou produtos..." autocomplete="off"><kbd>Buscar</kbd></label>
+      <div class="header-actions">
+        <button class="account-button" id="account-button" type="button">Entrar</button>
+        <button class="portal-button" id="seller-portal-button" type="button"><span>▤</span><span>Vender no Com Pay</span></button>
+        <button class="admin-button" id="admin-portal-button" type="button" aria-label="Painel administrativo" hidden>Admin</button>
+        <button class="cart-button" id="open-cart" type="button" aria-label="Abrir sacola"><span class="cart-icon">🛍</span><span class="cart-copy">Minha sacola<strong id="cart-total-label">R$ 0,00</strong></span><span class="cart-count" id="cart-count">0</span></button>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <div class="nav-inner">
+        <button class="nav-link active" data-view="market">Explorar</button>
+        <button class="nav-link" data-view="stores">Todas as lojas</button>
+        <button class="nav-link" data-view="seller">Área do lojista</button>
+        <span class="nav-message">Várias lojas. Uma só vitrine. <span>✳</span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="app-content" class="app-content"></main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand footer-brand" href="#" id="footer-home" aria-label="Com Pay, início"><span class="brand-mark"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M8 18h28l-3 17H11L8 18Z" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><path d="M14 18c.5-5 3.3-8 7-9 .1 4.5-1.6 7.3-5.8 9" fill="#c6e49c"/><path d="M25 18c.5-4.3 3.4-7.3 7-7.7.2 4.2-1.5 7.2-5.7 8.7" fill="#f3a56e"/><path d="M13 24h18M14 29h16" fill="none" stroke="white" stroke-linecap="round" stroke-width="1.7"/></svg></span><span class="brand-name">com<span>pay</span><small>LOJAS PERTO DE VOCÊ</small></span></a>
+      <p>Com Pay conecta lojas locais a novos clientes. <span>♥</span></p>
+      <small>© 2026 Com Pay · Marketplace de lojas independentes</small>
+    </div>
+  </footer>
+
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Sacola de compras" aria-hidden="true">
+    <div class="drawer-header"><div><span class="drawer-kicker">COM PAY</span><h2>Minha sacola <span id="drawer-count">(0)</span></h2></div><button class="close-cart" id="close-cart" aria-label="Fechar sacola">×</button></div>
+    <p class="cart-explainer">Seus itens ficam agrupados por loja.</p>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span>🛍️</span><strong>Sua sacola está vazia</strong><p>Explore as lojas e encontre algo especial.</p><button id="continue-shopping">Explorar lojas</button></div>
+    <div class="cart-summary" id="cart-summary">
+      <div class="summary-row"><span>Subtotal dos produtos</span><strong id="subtotal-value">R$ 0,00</strong></div>
+      <div class="summary-row"><span>Lojas no pedido</span><strong id="store-count-value">0</strong></div>
+      <div class="summary-total"><span>Total do pedido</span><strong id="total-value">R$ 0,00</strong></div>
+      <button class="checkout-button" id="checkout-button">Confirmar pedido <span>→</span></button>
+      <small>O pedido será registrado; pagamento online ainda não está integrado.</small>
+    </div>
+  </aside>
+  <div class="cart-backdrop modal-backdrop" id="modal-backdrop"></div>
+  <section class="app-modal" id="app-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title"></section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="teste.js"></script>
+</body>
+</html>
