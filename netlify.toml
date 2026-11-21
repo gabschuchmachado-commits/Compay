@@ -1,0 +1,4 @@
+[build]
+  # Package the static frontend; no dependencies or Node.js version are required.
+  command = "mkdir -p dist && cp teste.html dist/index.html && cp teste.html teste.css teste.js dist/"
+  publish = "dist"
